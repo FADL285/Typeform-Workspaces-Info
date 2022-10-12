@@ -1,0 +1,34 @@
+{
+  "name": "typeform-workspaces-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FADL285/typeform-workspaces-info.git"
+  },
+  "keywords": [
+    "typeform",
+    "workspaces",
+    "information",
+    "api"
+  ],
+  "author": "Mohamed Fadl <Mohamed.Fadl2852@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FADL285/typeform-workspaces-info/issues"
+  },
+  "homepage": "https://github.com/FADL285/typeform-workspaces-info#readme",
+  "dependencies": {
+    "@typeform/api-client": "^1.7.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
