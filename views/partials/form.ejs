@@ -1,0 +1,41 @@
+<form
+  action="/workspaces"
+  method="post"
+  class="mx-auto mt-8 mb-0 max-w-md space-y-4"
+>
+  <div>
+    <label for="token" class="sr-only">Personal Token</label>
+    <div class="relative">
+      <input
+        id="token"
+        type="password"
+        class="w-full rounded-md border-gray-200 p-4 pr-12 text-base shadow-sm focus:ring-zinc-800 focus:border-zinc-800"
+        placeholder="Enter your personal token"
+        required
+        minlength="20"
+        maxlength="120"
+      />
+
+      <span class="absolute inset-y-0 right-4 flex items-center" id="eye">
+        <i
+          id="eye-icon"
+          class="h-5 w-5 text-gray-400 bg-eye-slash bg-no-repeat opacity-60"
+        ></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <button
+      type="submit"
+      class="block w-full rounded-md bg-zinc-800 px-5 py-3 text-lg text-white shadow-md hover:bg-zinc-700 transition-colors duration-500"
+    >
+      Get Workspaces Info →
+    </button>
+  </div>
+
+  <p class="text-center text-sm text-gray-500">
+    How to get personal token?
+    <a id="dialog-trigger" class="underline" href="">Show Instructions</a>
+  </p>
+</form>

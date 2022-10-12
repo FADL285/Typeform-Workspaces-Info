@@ -1,0 +1,28 @@
+<%- include ('partials/header.ejs') %>
+<%# Main Content %>
+
+<main class="my-6">
+  <div class="mx-auto max-w-xl text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">
+      Get Workspaces Information 🔍
+    </h1>
+
+    <p class="mt-4 text-gray-500 text-lg">
+      Retrieve all workspaces you have access to with your
+      <strong>personal token</strong> 🔐.
+    </p>
+    <p class="text-gray-500 mt-1">
+      Your data don't save don't worry, it's just using to get your workspaces.
+    </p>
+
+    <div class="rounded-lg p-8 shadow-md mt-6">
+      <img src="images/search-icon.svg" alt="Find Icon" class="w-28 m-auto" />
+
+      <%- include ('partials/form.ejs') %>
+    </div>
+  </div>
+</main>
+
+<%- include ('partials/dialog.ejs') %> 
+<%# End Main Content %> 
+<%- include ('partials/footer.ejs') %>

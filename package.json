@@ -6,13 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "tailwind:w": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/style.css --watch",
+    "tailwind": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/style.css --minify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FADL285/typeform-workspaces-info.git",
-    "tailwind:watch": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
-    "tailwind:build": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --minify"
+    "url": "git+https://github.com/FADL285/typeform-workspaces-info.git"
   },
   "keywords": [
     "typeform",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/FADL285/typeform-workspaces-info#readme",
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@typeform/api-client": "^1.7.0",
     "ejs": "^3.1.8",
     "express": "^4.18.2"
