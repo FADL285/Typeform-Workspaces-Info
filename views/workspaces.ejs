@@ -1,0 +1,57 @@
+<%- include ('partials/header.ejs') %>
+<%# Main Content %>
+<main class="my-6 text-center">
+  <section>
+    <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+          Workspaces that you have access!
+        </h2>
+      </div>
+
+      <% if (!workspaces || workspaces.length === 0) {%>
+      <p>No Workspaces Found, try to create one</p>
+      <% } else { %>
+      <div class="mt-8 sm:mt-12">
+        <dl
+          id="workspaces"
+          class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+        >
+          <% for (const workspace of workspaces) { %>
+          <div
+            class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center"
+          >
+            <dd class="text-2xl font-bold text-zinc-800 md:text-3xl">
+              <%= workspace.name %>
+            </dd>
+            <dt>
+              <p class="order-last text-lg font-medium text-gray-500 my-3">
+                <%= workspace?.forms?.count %> Forms
+              </p>
+              <p class="mb-4">
+                <strong>ID</strong> :
+                <em
+                  class="mx-2 px-2 py-1 bg-zinc-800/90 text-white rounded-md text-lg"
+                >
+                  <%= workspace.id %>
+                </em>
+              </p>
+              <span class="flex items-center justify-center">
+                <i
+                  id="copy-<%= workspace.id %>"
+                  class="__copy h-8 w-8 bg-clipboard bg-no-repeat opacity-95 cursor-pointer"
+                  data-id="<%= workspace.id %>"
+                  title="Copy ID"
+                ></i>
+              </span>
+            </dt>
+          </div>
+          <% } %>
+        </dl>
+      </div>
+      <% } %>
+    </div>
+  </section>
+</main>
+<%# End Main Content %>
+<%- include ('partials/footer.ejs') %>

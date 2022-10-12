@@ -7,6 +7,8 @@ const eyeSwitcherIcon = document.getElementById('eye-icon');
 const dialog = document.getElementById('dialog');
 const dialogTrigger = document.getElementById('dialog-trigger');
 const dialogClose = document.getElementById('dialog-close');
+// Workspace list element
+const workspaceList = document.getElementById('workspaces');
 
 // Function to toggle the token input type
 function toggleTokenInputType() {
@@ -21,16 +23,56 @@ function toggleTokenInputType() {
   }
 }
 
-eyeSwitcher.addEventListener('click', toggleTokenInputType);
+// Function to change clipboard icon when clicked
+function changeClipboardIcon(element) {
+  // Handle if user clicks on copy button again before timeout
+  if (element.classList.contains('__copied')) return;
+  element.classList.remove('bg-clipboard', '__copy');
+  element.classList.add('bg-clipboard-check', '__copied');
 
-// Open dialog on trigger
-dialogTrigger.addEventListener('click', (e) => {
-  e.preventDefault();
-  dialog.showModal();
-});
+  setTimeout(() => {
+    element.classList.remove('bg-clipboard-check', '__copied');
+    element.classList.add('bg-clipboard', '__copy');
+  }, 3000);
+}
 
-// Close dialog on close
-dialogClose.addEventListener('click', (e) => {
-  e.preventDefault();
-  dialog.close();
-});
+// Function to copy workspace ID to clipboard
+function copyWorkspaceID(id) {
+  navigator.clipboard.writeText(id).then(
+    () => {
+      const element = document.getElementById(`copy-${id}`);
+      changeClipboardIcon(element);
+    },
+    () => {
+      alert('Failed to copy workspace ID to clipboard');
+    }
+  );
+}
+
+// Function to check if click is on copy button
+function isCopyButton(element) {
+  return element.classList.contains('__copy');
+}
+
+if (tokenInput) {
+  eyeSwitcher.addEventListener('click', toggleTokenInputType);
+
+  // Open dialog on trigger
+  dialogTrigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.showModal();
+  });
+
+  // Close dialog on close
+  dialogClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
+} else if (workspaceList) {
+  workspaceList.addEventListener('click', ({ target }) => {
+    if (isCopyButton(target)) {
+      const id = target.dataset.id;
+      copyWorkspaceID(id);
+    }
+  });
+}

@@ -8,8 +8,9 @@
     <div class="relative">
       <input
         id="token"
-        type="password"
         class="w-full rounded-md border-gray-200 p-4 pr-12 text-base shadow-sm focus:ring-zinc-800 focus:border-zinc-800"
+        type="password"
+        name="token"
         placeholder="Enter your personal token"
         required
         minlength="20"
@@ -23,6 +24,12 @@
         ></i>
       </span>
     </div>
+
+    <% if (error) { %>
+    <p class="mt-1 ml-2 text-red-600 text-left">
+      Unauthorized: The token is invalid or does not have access!
+    </p>
+    <% } %>
   </div>
 
   <div class="flex items-center justify-between">
