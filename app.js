@@ -2,6 +2,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getWorkspaces } from './handlers/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,13 +13,24 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Parse incoming request bodies
+app.use(express.urlencoded({ extended: true }));
+// Serve static files
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { error: null });
 });
 
-app.post('/workspaces', (req, res) => {});
+app.post('/workspaces', async (req, res) => {
+  const { token } = req.body;
+  try {
+    const response = await getWorkspaces(token);
+    res.render('workspaces', { workspaces: response.items });
+  } catch (error) {
+    res.status(403).render('index', { error: error.message });
+  }
+});
 
 // 404  page
 app.use((req, res) => {
