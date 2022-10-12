@@ -2,14 +2,17 @@
   "name": "typeform-workspaces-info",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FADL285/typeform-workspaces-info.git"
+    "url": "git+https://github.com/FADL285/typeform-workspaces-info.git",
+    "tailwind:watch": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --watch",
+    "tailwind:build": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/main.css --minify"
   },
   "keywords": [
     "typeform",
@@ -29,6 +32,7 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "tailwindcss": "^3.1.8"
   }
 }
