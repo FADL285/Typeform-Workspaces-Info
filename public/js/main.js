@@ -14,12 +14,12 @@ const workspaceList = document.getElementById('workspaces');
 function toggleTokenInputType() {
   if (tokenInput.type === 'password') {
     tokenInput.type = 'text';
-    eyeSwitcherIcon.classList.remove('bg-eye-slash');
-    eyeSwitcherIcon.classList.add('bg-eye');
-  } else {
-    tokenInput.type = 'password';
     eyeSwitcherIcon.classList.remove('bg-eye');
     eyeSwitcherIcon.classList.add('bg-eye-slash');
+  } else {
+    tokenInput.type = 'password';
+    eyeSwitcherIcon.classList.remove('bg-eye-slash');
+    eyeSwitcherIcon.classList.add('bg-eye');
   }
 }
 
