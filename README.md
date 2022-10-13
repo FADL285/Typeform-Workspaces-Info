@@ -6,7 +6,7 @@ Retrieve all workspaces you have access to using access token. 🔐
 
 ## Demo
 
-> Live Preview: [Typeform Workspaces Info](http://127.0.0.1:3000/)
+> Live Preview: [Typeform Workspaces Info](https://typeform-workspaces-info.cyclic.app/)
 
 ## Installation
 
