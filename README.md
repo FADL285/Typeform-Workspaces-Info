@@ -2,7 +2,7 @@
 
 Retrieve all workspaces you have access to using access token. 🔐
 
-![Logo](public/logo.svg)
+![Logo](public/logo-animated.gif)
 
 ## Demo
 
