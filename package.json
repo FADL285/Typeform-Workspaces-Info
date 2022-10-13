@@ -1,7 +1,7 @@
 {
   "name": "typeform-workspaces-info",
   "version": "1.0.0",
-  "description": "",
+  "description": "Retrieve all workspaces you have access to using access token. 🔐",
   "main": "app.js",
   "type": "module",
   "scripts": {
