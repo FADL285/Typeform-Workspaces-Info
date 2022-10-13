@@ -1,8 +1,8 @@
-# Typeform Workspaces Info
-
-Retrieve all workspaces you have access to using access token. 🔐
-
-![Logo](public/logo-animated.gif)
+<div align="center">
+    <h1>Typeform Workspaces Info</h1>
+    <img src="public/logo-animated.gif" alt="Logo" />
+    <p>Retrieve all workspaces you have access to using access token. 🔐</p>
+</div>
 
 ## Demo
 
